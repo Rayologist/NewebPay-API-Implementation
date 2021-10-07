@@ -1,0 +1,25 @@
+{
+  "name": "newebpay-api-implementation",
+  "version": "1.0.0",
+  "description": "This project implements NewebPay (藍新金流) in Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rayologist/NewebPay-API-Implementation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rayologist/NewebPay-API-Implementation/issues"
+  },
+  "homepage": "https://github.com/Rayologist/NewebPay-API-Implementation#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "node-fetch": "^3.0.0",
+    "qs": "^6.10.1"
+  }
+}
