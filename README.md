@@ -31,7 +31,7 @@ NEWEBPAY_HASH_IV=your_hash_iv
 
 > Set `isProduction` to `false` for using NewebPay testing website
 
-### 1.1 Initialize a merchant object and pass it into NewebPay()
+### 1.1 Initialize a merchant object and pass it into `NewebPay`
 
 ```node
 import NewebPay from "newebpay-api";
