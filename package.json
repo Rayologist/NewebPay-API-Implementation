@@ -1,6 +1,6 @@
 {
   "name": "newebpay-api",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "This project implements NewebPay (藍新金流) in Node.js",
   "main": "index.js",
   "type": "module",
