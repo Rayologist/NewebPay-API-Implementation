@@ -48,6 +48,7 @@ const merchant = {
 
 const newebpay = new NewebPay(merchant);
 ```
+
 ### 2. Generate Post Data
 
 ### 2.1 Generate trade information using `NewebPay.generateTradeInfo`
@@ -62,6 +63,23 @@ const tradeInfo = newebpay.generateTradeInfo({
   NotifyURL: "",
   ClientBackURL: "",
 });
+```
+
+or your can specify `RespondType`. The defualt is default `JSON`, you can specify it to `String`.
+
+```node
+const tradeInfo = newebpay.generateTradeInfo(
+  {
+    MerchantOrderNo: "ljwvis_1633936296772",
+    Amt: 40400,
+    ItemDesc: "IPhone 13 Pro Max 256GB Graphite",
+    Email: "customer.email@gmail.com",
+    ReturnURL: "",
+    NotifyURL: "",
+    ClientBackURL: "",
+  },
+  "String")
+);
 ```
 
 **Output:**
@@ -106,10 +124,9 @@ const postData = newebpay.generatePostData(tradeInfo);
 
 ```node
 app.post("/payment/confirm/newebpay", (req, res) => {
-    const returnMessage = req.body
-    console.log(returnMessage)
-})
-
+  const returnMessage = req.body;
+  console.log(returnMessage);
+});
 ```
 
 **output:**
@@ -130,6 +147,12 @@ app.post("/payment/confirm/newebpay", (req, res) => {
 
 ```node
 const decryptedMessage = newebpay.decrypt(returnMessage);
+```
+
+If the return message is specified `String`, `parseQueryString` should be `true`
+
+```node
+const decryptedMessage = newebpay.decrypt(returnMessage, true);
 ```
 
 **Output:**
@@ -165,7 +188,7 @@ const decryptedMessage = newebpay.decrypt(returnMessage);
 
 ### 4. Confirm trade result by querying trade information
 
-### 4.1 Generate query information using `NewebPay.generateQueryInfo`. The first argument is `MerchantOrderNo` (Order id) and the second, `Amt.` (Amount)
+### 4.1 Generate query information using `NewebPay.generateQueryInfo`. The first argument is `MerchantOrderNo` (Order id) and the second, `Amt` (Amount)
 
 ```node
 const queryInfo = newebpay.generateQueryInfo("vevzlu_1633589710468", 300);
@@ -233,4 +256,4 @@ const queryResult = await newebpay.queryTradeInfo(queryInfo);
 
 ## 6. Contact
 
-if you have any suggestion or question, please do not hesitate to email me at `rayologist1002@gmail.com`
+if you have any suggestion or question, please do not hesitate to email me at rayologist1002@gmail.com
