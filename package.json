@@ -1,6 +1,6 @@
 {
   "name": "newebpay-api",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "This project implements NewebPay (藍新金流) in Node.js",
   "main": "index.js",
   "type": "module",
@@ -11,7 +11,13 @@
     "type": "git",
     "url": "git+https://github.com/Rayologist/NewebPay-API-Implementation.git"
   },
-  "keywords": [],
+  "keywords": [
+    "newebpay",
+    "API",
+    "MPG",
+    "Query Trade Info",
+    "藍新金流"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
