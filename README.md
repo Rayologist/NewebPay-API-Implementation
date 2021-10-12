@@ -48,6 +48,7 @@ const merchant = {
 
 const newebpay = new NewebPay(merchant);
 ```
+### 2. Generate Post Data
 
 ### 2.1 Generate trade information using `NewebPay.generateTradeInfo`
 
@@ -99,11 +100,12 @@ const postData = newebpay.generatePostData(tradeInfo);
 }
 ```
 
-### 3.1 Server receiving payment infomation from NewebPay
+### 3. Server Receiving Payment Infomation from NewebPay
+
+### 3.1 Simple server example and its output
 
 ```node
-# Simple server example
-app.post("/payment/confirm/newebpay", (req, res)=>{
+app.post("/payment/confirm/newebpay", (req, res) => {
     const returnMessage = req.body
     console.log(returnMessage)
 })
@@ -225,10 +227,10 @@ const queryResult = await newebpay.queryTradeInfo(queryInfo);
 }
 ```
 
-## 4. Resources
+## 5. Resources
 
 - [NewebPay API Documentation](https://www.newebpay.com/website/Page/content/download_api)
 
-## 5. Contact
+## 6. Contact
 
 if you have any suggestion or question, please do not hesitate to email me at `rayologist1002@gmail.com`
