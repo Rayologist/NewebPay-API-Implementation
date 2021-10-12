@@ -149,7 +149,7 @@ app.post("/payment/confirm/newebpay", (req, res) => {
 const decryptedMessage = newebpay.decrypt(returnMessage);
 ```
 
-If the return message is specified `String`, `parseQueryString` should be `true`
+If `RespondType` is set to `String` as described in section 2.1, `parseQueryString` should be set to `true`
 
 ```node
 const decryptedMessage = newebpay.decrypt(returnMessage, true);
