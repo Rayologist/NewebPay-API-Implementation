@@ -9,15 +9,15 @@ Packages Used:
 - `dotenv`
 - `qs`
 
-# Usage
+## Usage
 
-## 1. Download the package
+### 1. Download the package
 
 ```bash
 npm i newebpay-api
 ```
 
-## 2. Create a .env file
+### 2. Create a .env file
 
 ```env
 NEWEBPAY_HASH_KEY=your_hash_key
@@ -25,13 +25,13 @@ NEWEBPAY_HASH_IV=your_hash_iv
 
 ```
 
-## 3. Code Example
+### 3. Code Example
 
 ### 1. Instantiate NewebPay class
 
 > Set `isProduction` to `false` for using NewebPay testing website
 
-### 1.1 Initialize a merchant object and pass it into `NewebPay`
+#### 1.1 Initialize a merchant object and pass it into `NewebPay`
 
 ```node
 import NewebPay from 'newebpay-api';
@@ -51,7 +51,7 @@ const newebpay = new NewebPay(merchant);
 
 ### 2. Generate Post Data
 
-### 2.1 Generate trade information using `NewebPay.generateTradeInfo`
+#### 2.1 Generate trade information using `NewebPay.generateTradeInfo`
 
 ```node
 const tradeInfo = newebpay.generateTradeInfo({
@@ -120,7 +120,7 @@ const postData = newebpay.generatePostData(tradeInfo);
 
 ### 3. Server Receiving Payment Infomation from NewebPay
 
-### 3.1 Simple server example and its output
+#### 3.1 Simple server example and its output
 
 ```node
 app.post('/payment/confirm/newebpay', (req, res) => {
@@ -143,7 +143,7 @@ app.post('/payment/confirm/newebpay', (req, res) => {
 
 ```
 
-### 3.2 Decrypt the returned message using `NewebPay.decrypt`
+#### 3.2 Decrypt the returned message using `NewebPay.decrypt`
 
 ```node
 const decryptedMessage = newebpay.decrypt(returnMessage);
@@ -188,7 +188,7 @@ const decryptedMessage = newebpay.decrypt(returnMessage, true);
 
 ### 4. Confirm trade result by querying trade information
 
-### 4.1 Generate query information using `NewebPay.generateQueryInfo`. The first argument is `MerchantOrderNo` (Order id) and the second, `Amt` (Amount)
+#### 4.1 Generate query information using `NewebPay.generateQueryInfo`. The first argument is `MerchantOrderNo` (Order id) and the second, `Amt` (Amount)
 
 ```node
 const queryInfo = newebpay.generateQueryInfo('vevzlu_1633589710468', 300);
@@ -208,7 +208,7 @@ const queryInfo = newebpay.generateQueryInfo('vevzlu_1633589710468', 300);
 }
 ```
 
-### 4.2 Query trade information using `NewebPay.queryTradeInfo`
+#### 4.2 Query trade information using `NewebPay.queryTradeInfo`
 
 ```node
 const queryResult = await newebpay.queryTradeInfo(queryInfo);
