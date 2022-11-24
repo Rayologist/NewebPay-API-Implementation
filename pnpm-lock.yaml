@@ -3,12 +3,16 @@ lockfileVersion: 5.4
 specifiers:
   dotenv: ^16.0.3
   node-fetch: ^3.3.0
+  prettier: ^2.8.0
   qs: ^6.11.0
 
 dependencies:
   dotenv: 16.0.3
   node-fetch: 3.3.0
   qs: 6.11.0
+
+devDependencies:
+  prettier: 2.8.0
 
 packages:
 
@@ -85,6 +89,12 @@ packages:
   /object-inspect/1.12.2:
     resolution: {integrity: sha512-z+cPxW0QGUp0mcqcsgQyLVRDoXFQbXOwBaqyF7VIgI4TWNQsDHrBpUQslRmIfAoYWdYzs6UlKJtB2XJpTaNSpQ==}
     dev: false
+
+  /prettier/2.8.0:
+    resolution: {integrity: sha512-9Lmg8hTFZKG0Asr/kW9Bp8tJjRVluO8EJQVfY2T7FMw9T5jy4I/Uvx0Rca/XWf50QQ1/SS48+6IJWnrb+2yemA==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
+    dev: true
 
   /qs/6.11.0:
     resolution: {integrity: sha512-MvjoMCJwEarSbUYk5O+nmoSzSutSsTwF85zcHPQ9OrlFoZOYIjaqBAJIqIXjptyD5vThxGq52Xu/MaJzRkIk4Q==}
