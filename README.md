@@ -34,13 +34,13 @@ NEWEBPAY_HASH_IV=your_hash_iv
 ### 1.1 Initialize a merchant object and pass it into `NewebPay`
 
 ```node
-import NewebPay from "newebpay-api";
-import { config } from "dotenv";
+import NewebPay from 'newebpay-api';
+import { config } from 'dotenv';
 
 config();
 
 const merchant = {
-  MerchantID: "YourMerchantID",
+  MerchantID: 'YourMerchantID',
   hashKey: process.env.NEWEBPAY_HASH_KEY,
   hashIV: process.env.NEWEBPAY_HASH_IV,
   isProduction: false,
@@ -55,13 +55,13 @@ const newebpay = new NewebPay(merchant);
 
 ```node
 const tradeInfo = newebpay.generateTradeInfo({
-  MerchantOrderNo: "ljwvis_1633936296772",
+  MerchantOrderNo: 'ljwvis_1633936296772',
   Amt: 40400,
-  ItemDesc: "IPhone 13 Pro Max 256GB Graphite",
-  Email: "customer.email@gmail.com",
-  ReturnURL: "",
-  NotifyURL: "",
-  ClientBackURL: "",
+  ItemDesc: 'IPhone 13 Pro Max 256GB Graphite',
+  Email: 'customer.email@gmail.com',
+  ReturnURL: '',
+  NotifyURL: '',
+  ClientBackURL: '',
 });
 ```
 
@@ -123,7 +123,7 @@ const postData = newebpay.generatePostData(tradeInfo);
 ### 3.1 Simple server example and its output
 
 ```node
-app.post("/payment/confirm/newebpay", (req, res) => {
+app.post('/payment/confirm/newebpay', (req, res) => {
   const returnMessage = req.body;
   console.log(returnMessage);
 });
@@ -191,7 +191,7 @@ const decryptedMessage = newebpay.decrypt(returnMessage, true);
 ### 4.1 Generate query information using `NewebPay.generateQueryInfo`. The first argument is `MerchantOrderNo` (Order id) and the second, `Amt` (Amount)
 
 ```node
-const queryInfo = newebpay.generateQueryInfo("vevzlu_1633589710468", 300);
+const queryInfo = newebpay.generateQueryInfo('vevzlu_1633589710468', 300);
 ```
 
 **Output:**
